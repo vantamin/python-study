@@ -13,3 +13,18 @@ $ source bin/activate
 ```
 
 [가상 환경 및 패키지](https://docs.python.org/ko/3/tutorial/venv.html)
+
+## Selenium
+
+### 1. Selenium 설치
+
+```bash
+(python-study) $ pip install selenium
+(python-study) $ pip freeze > requirements.txt
+```
+
+[Selenium with Python](https://selenium-python.readthedocs.io/)
+
+### 2. ChromeDriver 다운로드
+
+[ChromeDriver](https://chromedriver.chromium.org/downloads)
