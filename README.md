@@ -14,6 +14,27 @@ $ source bin/activate
 
 [가상 환경 및 패키지](https://docs.python.org/ko/3/tutorial/venv.html)
 
+## Project Initial
+
+```bash
+~/javascript-study $ yarn add --dev --exact prettier
+~/javascript-study $ npx mrm lint-staged
+```
+
+## Package Install
+
+```bash
+~/javascript-study $ git config --local user.name "vantamin"
+~/javascript-study $ git config --local user.email "vantablack.min@gmail.com"
+~/javascript-study $ yarn install
+```
+
+## Sourcetree 실행
+
+```bash
+$ open /Applications/Sourcetree.app
+```
+
 ## Selenium
 
 ### 1. Selenium 설치
