@@ -17,7 +17,7 @@ $ source bin/activate
 ## Project Initial
 
 ```bash
-~/javascript-study $ yarn add --dev --exact prettier
+~/javascript-study $ yarn add --dev --exact prettier @prettier/plugin-python
 ~/javascript-study $ npx mrm lint-staged
 ```
 
