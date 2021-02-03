@@ -3,10 +3,10 @@ from google_images_search import GoogleImagesSearch
 import time
 
 class GoogleImagesSearchScroll(GoogleImagesSearch):
-    SCROLL_PAUSE_TIME = 1.5
+    SCROLL_PAUSE_TIME = 3
 
-    def pause(self):
-        time.sleep(self.SCROLL_PAUSE_TIME)
+    def pause(self, sec=False):
+        time.sleep(sec or self.SCROLL_PAUSE_TIME)
 
     def scroll(self):
         last_height = self.driver.execute_script("return document.body.scrollHeight;")
@@ -26,7 +26,7 @@ class GoogleImagesSearchScroll(GoogleImagesSearch):
 
             last_height = new_height
 
-    def search(self):
-        super().search()
+    def search(self, keyword):
+        super().search(keyword)
 
         self.scroll()
