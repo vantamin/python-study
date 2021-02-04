@@ -10,7 +10,7 @@ class GoogleImagesDownload(GoogleImagesSearchScroll):
     def __init__(self):
         self.dirname = filedialog.askdirectory()
 
-    def download(self, keyword):
+    def download(self, keyword, limit=False):
         if False if self.dirname else True:
             return
 
@@ -25,20 +25,35 @@ class GoogleImagesDownload(GoogleImagesSearchScroll):
         except:
             pass
 
+        index = 1
+
         count = 1
 
         for image in images:
+            if limit:
+                if count > limit:
+                    break
+
             try:
                 image.click()
 
                 self.pause()
 
-                url = self.driver.find_element_by_xpath("/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[2]/a/img").get_attribute("src")
+                url = self.driver.find_element_by_xpath("/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div/div[2]/a/img").get_attribute("src")
 
-                download_file.download(url, os.path.join(path, split_path.get(url)))
+                filename = split_path.get(url)
+
+                if len(filename.split(".")) == 1:
+                    filename = filename + ".jpg"
+
+                filename = str(index).zfill(3) + "." + filename
+
+                download_file.download(url, os.path.join(path, filename))
 
                 count = count + 1
             except:
                 pass
+
+            index = index + 1
 
         self.close()

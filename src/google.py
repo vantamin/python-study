@@ -5,7 +5,7 @@ def main(keywords):
         response = GoogleImagesDownload()
 
         for keyword in keywords:
-            response.download(keyword)
+            response.download(keyword, 100)
 
 keywords = []
 
