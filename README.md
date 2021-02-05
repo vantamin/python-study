@@ -49,3 +49,12 @@ $ open /Applications/Sourcetree.app
 ### 2. ChromeDriver 다운로드
 
 [ChromeDriver](https://chromedriver.chromium.org/downloads)
+
+## Face Crop
+
+```bash
+(python-study) $ pip install autocrop
+(python-study) $ pip freeze > requirements.txt
+```
+
+[autocrop](https://pypi.org/project/autocrop/)
