@@ -16,6 +16,6 @@ def face_crop(url, filename):
     for x, y, w, h in faces:
         img = retval[y - int(h / 4):y + h + int(h / 4), x - int(w / 4):x + w + int(w / 4)]
 
-        cv2.imwrite(filename + str(i) + ".jpg", img)
+        cv2.imwrite(filename + "_" + str(i) + ".jpg", img)
 
         i = i + 1
