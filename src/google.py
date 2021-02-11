@@ -1,8 +1,8 @@
-from google_images_download import GoogleImagesDownload
+from google_images_crop import GoogleImagesCrop
 
 def main(keywords):
     if len(keywords) > 0:
-        response = GoogleImagesDownload()
+        response = GoogleImagesCrop()
 
         for keyword in keywords:
             response.download(keyword, 100)

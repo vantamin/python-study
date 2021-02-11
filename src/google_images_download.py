@@ -10,6 +10,9 @@ class GoogleImagesDownload(GoogleImagesSearchScroll):
     def __init__(self):
         self.dirname = filedialog.askdirectory()
 
+    def set_download(self, url, filename):
+        download_file.download(url, filename)
+
     def download(self, keyword, limit=False):
         if False if self.dirname else True:
             return
@@ -46,9 +49,9 @@ class GoogleImagesDownload(GoogleImagesSearchScroll):
                 if len(filename.split(".")) == 1:
                     filename = filename + ".jpg"
 
-                filename = str(index).zfill(3) + "." + filename
+                filename = str(index).zfill(3) + "_" + filename
 
-                download_file.download(url, os.path.join(path, filename))
+                self.set_download(url, os.path.join(path, filename))
 
                 count = count + 1
             except:
