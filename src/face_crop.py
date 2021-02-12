@@ -15,6 +15,8 @@ def face_crop(url, filename):
 
     dst = cv2.imdecode(dst, cv2.COLOR_BGR2GRAY)
 
+    dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
+
     faces = face_cascade.detectMultiScale(dst, 1.3, 5)
 
     i = 1
